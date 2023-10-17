@@ -1,4 +1,24 @@
 # mvr_back
 Back em django
 
-Depois eu escrevo aqui como iniciar o projeto se precisar, tò cm sono
+Tô considerando windows. Linux? se vira
+
+Crie seu ambiente virtual
+
+```
+virtualenv nome_do_ambiente
+```
+
+Ative o ambiente
+
+```
+.\nome_do_ambiente\Scripts\activate
+```
+
+Instala o django
+
+```python
+pip install django
+```
+
+Depois puxa o código do repositório https://github.com/Projeto-Menu/mvr_back.git
