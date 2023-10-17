@@ -1,7 +1,7 @@
 # mvr_back
 Back em django
 
-Tô considerando windows. Linux? se vira
+Tô considerando Windows. Linux? Se vira.
 
 Crie seu ambiente virtual
 
