@@ -25,13 +25,13 @@ Depois puxa o código do repositório https://github.com/Projeto-Menu/mvr_back.g
 
 ## Configuração do docker:
 
-Na pasta mvr_back:
+### Na pasta mvr_back:
 
 
 ```
 docker compose up --build
 ```
-Configuração do banco de dados:
+### Configuração do banco de dados:
 
 No brower:
 ```
@@ -45,6 +45,28 @@ Senha:
 ```
 postgres
 ```
+### Configuração do servidor pgAdmin
 
-Na página inicial do pgAdmin escrever o sql do documento database-sql.txt.
+Nome:
+```
+docker
+```
+
+Connection: 
+Host name:
+```
+database
+```
+Username:
+```
+postgres
+```
+Password:
+```
+postgres
+```
+### Criação do banco de dados
+Banco de dados:
+cardapio -> Query Tools -> (Todo o documento database-sql.txt)
+
 Qualquer coisa, é só perguntar! Linux? Se vira.
