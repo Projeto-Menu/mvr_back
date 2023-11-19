@@ -23,7 +23,7 @@ pip install django
 
 Depois puxa o código do repositório https://github.com/Projeto-Menu/mvr_back.git
 
-Configuração do docker:
+## Configuração do docker:
 
 Na pasta mvr_back:
 
