@@ -3,6 +3,8 @@ Back em django
 
 Tô considerando Windows. Linux? Se vira.
 
+Puxa o código do repositório https://github.com/Projeto-Menu/mvr_back.git
+
 Crie seu ambiente virtual
 
 ```
@@ -15,13 +17,43 @@ Ative o ambiente
 .\nome_do_ambiente\Scripts\activate
 ```
 
-Instala o django
+Instale as dependÊncias
 
 ```python
-pip install django
+pip install -r requirements.txt
 ```
 
-Depois puxa o código do repositório https://github.com/Projeto-Menu/mvr_back.git
+Gere as variáveis de ambiente(.env)
+
+```python
+python contrib/env_gen.py
+```
+
+Crie as migrações
+
+```python
+python manage.py migrate
+```
+
+Para criar um superUser e acessar o admin
+
+```python
+python manage.py createsuperuser
+```
+
+Rode o servidor
+
+```python
+python manage.py runserver
+```
+
+Para fazer chamadas pro backend, pode usar axios, pra instalar use
+
+```python
+npm install axios
+```
+As rotas da API estão em api_paths.txt
+
 
 ## Configuração do docker:
 

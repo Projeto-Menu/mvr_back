@@ -16,8 +16,11 @@ class Cardapio(models.Model):
     id_dia_funcionamento = models.ForeignKey('DiaFuncionamento', models.DO_NOTHING, db_column='id_dia_funcionamento', blank=True, null=True)
 
     class Meta:
+        verbose_name = "Cardápio"
+        verbose_name_plural = "Cardápios"
         managed = False
         db_table = 'cardapio'
+        
 
 
 class DiaFuncionamento(models.Model):
@@ -26,8 +29,14 @@ class DiaFuncionamento(models.Model):
     data_dia = models.DateField(blank=True, null=True)
 
     class Meta:
+        verbose_name = "Dia de Funcionamento"
+        verbose_name_plural = "Dias de Funcionamento"
         managed = False
         db_table = 'dia_funcionamento'
+        
+    def __str__(self):
+        data = str(self.data_dia)
+        return data
 
 
 class Feedback(models.Model):
@@ -38,6 +47,8 @@ class Feedback(models.Model):
     id_refeicao = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_refeicao', blank=True, null=True)
 
     class Meta:
+        verbose_name = "Feedback"
+        verbose_name_plural = "Feedbacks"
         managed = False
         db_table = 'feedback'
 
@@ -48,8 +59,13 @@ class Refeicoes(models.Model):
     descricao = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
+        verbose_name = "Refeição"
+        verbose_name_plural = "Refeições"
         managed = False
         db_table = 'refeicoes'
+        
+    def __str__(self):
+        return self.nome_prato
 
 
 class Usuario(models.Model):
@@ -62,5 +78,10 @@ class Usuario(models.Model):
     data_modificacao = models.DateField(blank=True, null=True)
 
     class Meta:
+        verbose_name = "Usuário"
+        verbose_name_plural = "Usuários"
         managed = False
         db_table = 'usuario'
+        
+    def __str__(self):
+        return self.nome
