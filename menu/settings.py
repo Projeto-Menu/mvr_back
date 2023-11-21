@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'menu.cardapio',
+    'rest_framework',
     'corsheaders',
 ]
 
