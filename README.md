@@ -52,7 +52,7 @@ Para fazer chamadas pro backend, pode usar axios, pra instalar use
 ```python
 npm install axios
 ```
-As rotas da API estão em api_paths.txt
+As rotas da API estão em api_paths
 
 
 ## Configuração do docker:
