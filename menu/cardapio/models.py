@@ -10,11 +10,17 @@ from django.db import models
 
 class Cardapio(models.Model):
     id_cardapio = models.IntegerField(primary_key=True)
-    tipo_refeicao = models.CharField(max_length=60, blank=True, null=True)
     hora_refeicao = models.CharField(max_length=255, blank=True, null=True)
-    id_refeicoes = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_refeicoes', blank=True, null=True)
     id_dia_funcionamento = models.ForeignKey('DiaFuncionamento', models.DO_NOTHING, db_column='id_dia_funcionamento', blank=True, null=True)
-
+    id_prato_principal = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_prato_principal', blank=True, null=True)
+    id_vegetariano = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_vegetariano', related_name='cardapio_id_vegetariano_set', blank=True, null=True)
+    id_guarnicao = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_guarnicao', related_name='cardapio_id_guarnicao_set', blank=True, null=True)
+    id_complemento = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_complemento', related_name='cardapio_id_complemento_set', blank=True, null=True)
+    id_salada_crua = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_salada_crua', related_name='cardapio_id_salada_crua_set', blank=True, null=True)
+    id_salada_cozida = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_salada_cozida', related_name='cardapio_id_salada_cozida_set', blank=True, null=True)
+    id_sobremesa = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_sobremesa', related_name='cardapio_id_sobremesa_set', blank=True, null=True)
+    id_bebida = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_bebida', related_name='cardapio_id_bebida_set', blank=True, null=True)
+    
     class Meta:
         verbose_name = "Cardápio"
         verbose_name_plural = "Cardápios"

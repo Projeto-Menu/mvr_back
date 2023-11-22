@@ -4,7 +4,7 @@
 Esta documentação descreve a API que fornece acesso a informações relacionadas a usuários, cardápios, refeições, feedback, e dias de funcionamento em um sistema web Django utilizando o Django Rest Framework. A API é projetada para ser acessada via HTTP e retorna os dados no formato JSON.
 
 ## Base URL
-A URL base para acessar a API é `https://seu-domínio.com/api/`.
+A URL base para acessar a API é `https://localhost/api/`.
 
 ## Endpoints Disponíveis
 

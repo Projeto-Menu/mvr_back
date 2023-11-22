@@ -24,4 +24,4 @@ class DiaFuncionamentoSerializer(serializers.ModelSerializer):
 class CardapioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cardapio
-        fields = ['id_cardapio','tipo_refeicao','hora_refeicao','id_refeicoes','id_dia_funcionamento']
+        fields = ['id_cardapio','hora_refeicao',"id_prato_principal","id_vegetariano","id_guarnicao","id_complemento","id_salada_crua","id_salada_cozida","id_sobremesa","id_bebida",'id_dia_funcionamento']
