@@ -1,8 +1,6 @@
 # mvr_back
 Back em django
 
-Tô considerando Windows. Linux? Se vira.
-
 Puxa o código do repositório https://github.com/Projeto-Menu/mvr_back.git
 
 Crie seu ambiente virtual
@@ -101,4 +99,4 @@ postgres
 Banco de dados:
 cardapio -> Query Tools -> (Todo o documento database-sql.txt)
 
-Qualquer coisa, é só perguntar! Linux? Se vira.
+Qualquer coisa, é só perguntar!
