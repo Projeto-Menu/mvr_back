@@ -30,16 +30,17 @@ create table feedback (
 
 create table dia_funcionamento (
 	id_dia_funcionamento SERIAL,
+	id_cardapio integer,
 	dia_semana varchar(60),
 	data_dia date,
-	primary key (id_dia_funcionamento)
+	primary key (id_dia_funcionamento),
+	FOREIGN KEY (id_cardapio) REFERENCES cardapio(id_cardapio)
 );
 
 
 create table cardapio (
 	id_cardapio SERIAL,
 	hora_refeicao varchar(255),
-	id_dia_funcionamento integer,
 	id_prato_principal integer,
 	id_vegetariano integer,
 	id_guarnicao integer,
@@ -49,7 +50,6 @@ create table cardapio (
 	id_sobremesa integer,
 	id_bebida integer,
 	primary key (id_cardapio),
-	FOREIGN KEY (id_dia_funcionamento) REFERENCES dia_funcionamento(id_dia_funcionamento),
 	FOREIGN KEY (id_prato_principal) REFERENCES refeicoes(id_refeicoes),
 	FOREIGN KEY (id_vegetariano) REFERENCES refeicoes(id_refeicoes),
 	FOREIGN KEY (id_guarnicao) REFERENCES refeicoes(id_refeicoes),
