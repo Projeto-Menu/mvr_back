@@ -29,7 +29,6 @@ create table feedback (
 
 create table cardapio (
 	id_cardapio SERIAL,
-	hora_refeicao varchar(255),
 	id_prato_principal integer,
 	id_vegetariano integer,
 	id_guarnicao integer,
