@@ -1,5 +1,5 @@
 create table usuario (
-	id_usuario integer,
+	id_usuario SERIAL,
 	nome varchar(60),
 	email varchar(60),
 	senha varchar(60),
@@ -10,14 +10,14 @@ create table usuario (
 );
 
 create table refeicoes (
-	id_refeicoes integer,
+	id_refeicoes SERIAL,
 	nome_prato varchar(60),
 	descricao varchar(255),
 	primary key (id_refeicoes)
 );
 
 create table feedback (
-	id_feedback integer,
+	id_feedback SERIAL,
 	nota_refeicao integer,
 	comentario varchar(255),
 	id_usuario integer,
@@ -29,7 +29,7 @@ create table feedback (
 
 
 create table dia_funcionamento (
-	id_dia_funcionamento integer,
+	id_dia_funcionamento SERIAL,
 	dia_semana varchar(60),
 	data_dia date,
 	primary key (id_dia_funcionamento)
@@ -37,12 +37,25 @@ create table dia_funcionamento (
 
 
 create table cardapio (
-	id_cardapio integer,
-	tipo_refeicao varchar(60),
+	id_cardapio SERIAL,
 	hora_refeicao varchar(255),
-	id_refeicoes integer,
 	id_dia_funcionamento integer,
+	id_prato_principal integer,
+	id_vegetariano integer,
+	id_guarnicao integer,
+	id_complemento integer,
+	id_salada_crua integer,
+	id_salada_cozida integer,
+	id_sobremesa integer,
+	id_bebida integer,
 	primary key (id_cardapio),
-	FOREIGN KEY (id_refeicoes) REFERENCES refeicoes(id_refeicoes),
-	FOREIGN KEY (id_dia_funcionamento) REFERENCES dia_funcionamento(id_dia_funcionamento)
+	FOREIGN KEY (id_dia_funcionamento) REFERENCES dia_funcionamento(id_dia_funcionamento),
+	FOREIGN KEY (id_prato_principal) REFERENCES refeicoes(id_refeicoes),
+	FOREIGN KEY (id_vegetariano) REFERENCES refeicoes(id_refeicoes),
+	FOREIGN KEY (id_guarnicao) REFERENCES refeicoes(id_refeicoes),
+	FOREIGN KEY (id_complemento) REFERENCES refeicoes(id_refeicoes),
+	FOREIGN KEY (id_salada_crua) REFERENCES refeicoes(id_refeicoes),
+	FOREIGN KEY (id_salada_cozida) REFERENCES refeicoes(id_refeicoes),
+	FOREIGN KEY (id_sobremesa) REFERENCES refeicoes(id_refeicoes),
+	FOREIGN KEY (id_bebida) REFERENCES refeicoes(id_refeicoes)
 );
