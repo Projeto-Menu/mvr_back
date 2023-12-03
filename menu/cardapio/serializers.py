@@ -19,9 +19,9 @@ class FeedbackSerializer(serializers.ModelSerializer):
 class DiaFuncionamentoSerializer(serializers.ModelSerializer):
     class Meta:
         model = DiaFuncionamento
-        fields = ['id_dia_funcionamento','dia_semana','data_dia']
+        fields = ['id_dia_funcionamento','id_almoco','id_janta','dia_semana','data_dia']
 
 class CardapioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cardapio
-        fields = ['id_cardapio','hora_refeicao',"id_prato_principal","id_vegetariano","id_guarnicao","id_complemento","id_salada_crua","id_salada_cozida","id_sobremesa","id_bebida",'id_dia_funcionamento']
+        fields = ['id_cardapio',"id_prato_principal","id_vegetariano","id_guarnicao","id_complemento","id_salada_crua","id_salada_cozida","id_sobremesa","id_bebida"]

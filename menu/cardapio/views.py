@@ -158,7 +158,7 @@ def feedback_detail(request, pk, format=None):
     Visualizar, atualizar ou deletar um usuário.
     """
     try:
-        feedback = feedback.objects.get(pk=pk)
+        feedback = Feedback.objects.get(pk=pk)
     except feedback.DoesNotExist:
         return Response(status=404)
 
@@ -184,7 +184,7 @@ def diaFuncionamento_list(request,format=None):
     """
     
     if request.method == 'GET':
-        diaFuncionamento = diaFuncionamento.objects.all()
+        diaFuncionamento = DiaFuncionamento.objects.all()
         serializer = DiaFuncionamentoSerializer(diaFuncionamento, many=True)
         return Response(serializer.data)
 

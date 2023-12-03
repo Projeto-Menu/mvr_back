@@ -7,11 +7,8 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
-
 class Cardapio(models.Model):
-    id_cardapio = models.IntegerField(primary_key=True)
-    hora_refeicao = models.CharField(max_length=255, blank=True, null=True)
-    id_dia_funcionamento = models.ForeignKey('DiaFuncionamento', models.DO_NOTHING, db_column='id_dia_funcionamento', blank=True, null=True)
+    id_cardapio = models.AutoField(primary_key=True)
     id_prato_principal = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_prato_principal', blank=True, null=True)
     id_vegetariano = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_vegetariano', related_name='cardapio_id_vegetariano_set', blank=True, null=True)
     id_guarnicao = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_guarnicao', related_name='cardapio_id_guarnicao_set', blank=True, null=True)
@@ -20,17 +17,18 @@ class Cardapio(models.Model):
     id_salada_cozida = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_salada_cozida', related_name='cardapio_id_salada_cozida_set', blank=True, null=True)
     id_sobremesa = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_sobremesa', related_name='cardapio_id_sobremesa_set', blank=True, null=True)
     id_bebida = models.ForeignKey('Refeicoes', models.DO_NOTHING, db_column='id_bebida', related_name='cardapio_id_bebida_set', blank=True, null=True)
-    
+
     class Meta:
         verbose_name = "Cardápio"
         verbose_name_plural = "Cardápios"
         managed = False
         db_table = 'cardapio'
-        
 
 
 class DiaFuncionamento(models.Model):
-    id_dia_funcionamento = models.IntegerField(primary_key=True)
+    id_dia_funcionamento = models.AutoField(primary_key=True)
+    id_almoco = models.ForeignKey(Cardapio, models.DO_NOTHING, db_column='id_almoco', blank=True, null=True)
+    id_janta = models.ForeignKey(Cardapio, models.DO_NOTHING, db_column='id_janta', related_name='diafuncionamento_id_janta_set', blank=True, null=True)
     dia_semana = models.CharField(max_length=60, blank=True, null=True)
     data_dia = models.DateField(blank=True, null=True)
 
@@ -44,9 +42,8 @@ class DiaFuncionamento(models.Model):
         data = str(self.data_dia)
         return data
 
-
 class Feedback(models.Model):
-    id_feedback = models.IntegerField(primary_key=True)
+    id_feedback = models.AutoField(primary_key=True)
     nota_refeicao = models.IntegerField(blank=True, null=True)
     comentario = models.CharField(max_length=255, blank=True, null=True)
     id_usuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='id_usuario', blank=True, null=True)
@@ -60,7 +57,7 @@ class Feedback(models.Model):
 
 
 class Refeicoes(models.Model):
-    id_refeicoes = models.IntegerField(primary_key=True)
+    id_refeicoes = models.AutoField(primary_key=True)
     nome_prato = models.CharField(max_length=60, blank=True, null=True)
     descricao = models.CharField(max_length=255, blank=True, null=True)
 
@@ -75,7 +72,7 @@ class Refeicoes(models.Model):
 
 
 class Usuario(models.Model):
-    id_usuario = models.IntegerField(primary_key=True)
+    id_usuario = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=60, blank=True, null=True)
     email = models.CharField(max_length=60, blank=True, null=True)
     senha = models.CharField(max_length=60, blank=True, null=True)

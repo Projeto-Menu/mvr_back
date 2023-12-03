@@ -4,7 +4,7 @@ from .models import *
 # Register your models here.
 
 class CardapioAdmin(admin.ModelAdmin):
-  list_display = ("id_cardapio", "hora_refeicao","id_prato_principal","id_vegetariano","id_guarnicao","id_complemento","id_salada_crua","id_salada_cozida","id_sobremesa","id_bebida","id_dia_funcionamento")
+  list_display = ("id_cardapio","id_prato_principal","id_vegetariano","id_guarnicao","id_complemento","id_salada_crua","id_salada_cozida","id_sobremesa","id_bebida")
   
 admin.site.register(Cardapio, CardapioAdmin)
 
