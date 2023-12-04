@@ -1,13 +1,3 @@
-create table usuario (
-	id_usuario SERIAL,
-	nome varchar(60),
-	email varchar(60),
-	senha varchar(60),
-	tipo_usuario varchar(20),
-	status varchar(20),
-	data_modificacao date,
-	primary key (id_usuario)
-);
 
 create table refeicoes (
 	id_refeicoes SERIAL,

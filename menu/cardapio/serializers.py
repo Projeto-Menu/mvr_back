@@ -4,7 +4,7 @@ from .models import *
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = ['id_usuario','nome','email','senha','tipo_usuario','status']
+        fields = ['id','username','email']
         
 class RefeicoesSerializer(serializers.ModelSerializer):
     class Meta:

@@ -599,5 +599,119 @@ id": 2,
 - **Resposta (Sucesso)**
   Sem conteúdo (204 No Content)
 
+### Registro de Usuário
+
+- **URL**
+  ```
+  POST /api/register/
+  ```
+
+- **Descrição**
+  Este endpoint permite o registro de um novo usuário no sistema.
+
+- **Corpo da Requisição**
+  ```json
+  {
+    "username": "NovoUsuario",
+    "password": "SenhaSegura123",
+    "email": "novousuario@email.com",
+    // ... outros campos ...
+  }
+  ```
+
+- **Resposta (Sucesso)**
+  ```json
+  {
+    "id": 2,
+    "nome": "NovoUsuario",
+    "email": "novousuario@email.com",
+    // ... outros campos ...
+  }
+  ```
+
+- **Resposta (Erro)**
+  ```json
+  {
+    "erro": "Mensagem de erro detalhada"
+  }
+  ```
+
+### Login de Usuário
+
+- **URL**
+  ```
+  POST /api/login/
+  ```
+
+- **Descrição**
+  Este endpoint permite o login de um usuário existente.
+
+- **Corpo da Requisição**
+  ```json
+  {
+    "username": "UsuarioExistente",
+    "password": "SenhaSegura123",
+    // ... outros campos ...
+  }
+  ```
+
+- **Resposta (Sucesso)**
+  ```json
+  {
+    "id": 1,
+    "nome": "UsuarioExistente",
+    "email": "usuarioexistente@email.com",
+    // ... outros campos ...
+  }
+  ```
+
+- **Resposta (Erro)**
+  ```json
+  {
+    "erro": "Mensagem de erro detalhada"
+  }
+  ```
+
+### Logout de Usuário
+
+- **URL**
+  ```
+  POST /api/logout/
+  ```
+
+- **Descrição**
+  Este endpoint realiza o logout do usuário atual.
+
+- **Resposta (Sucesso)**
+  Sem conteúdo (204 No Content)
+
+### Redefinição de Senha
+
+- **URL**
+  ```
+  POST /api/password-reset/
+  ```
+
+- **Descrição**
+  Este endpoint permite a redefinição de senha para um usuário.
+
+- **Corpo da Requisição**
+  ```json
+  {
+    "email": "usuario@email.com",
+    // ... outros campos ...
+  }
+  ```
+
+- **Resposta (Sucesso)**
+  Sem conteúdo (204 No Content)
+
+- **Resposta (Erro)**
+  ```json
+  {
+    "erro": "Mensagem de erro detalhada"
+  }
+  ```
+
 ## Considerações Finais
 Certifique-se de utilizar métodos HTTP apropriados para cada operação (por exemplo, GET para leitura). Além disso, verifique as permissões adequadas para acessar esses endpoints. Esta documentação fornece uma visão geral dos endpoints disponíveis, parâmetros de requisição e formato de resposta.

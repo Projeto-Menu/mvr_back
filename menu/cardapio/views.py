@@ -3,6 +3,28 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import *
+from allauth.account.views import SignupView, LoginView, LogoutView, PasswordResetView
+from allauth.account import app_settings
+
+@api_view(['POST'])
+def register_view(request, format=None):
+    response = SignupView.as_view()(request)
+    return response
+
+@api_view(['POST'])
+def login_view(request, format=None):
+    response = LoginView.as_view()(request)
+    return response
+
+@api_view(['POST'])
+def logout_view(request, format=None):
+    response = LogoutView.as_view()(request)
+    return response
+
+@api_view(['POST'])
+def password_reset_view(request, format=None):
+    response = PasswordResetView.as_view()(request)
+    return response
 
 
 @api_view(['GET', 'POST'])

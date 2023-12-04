@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from menu.cardapio import views as v
 from rest_framework.urlpatterns import format_suffix_patterns
+from django.views.generic import TemplateView
 
 
 app_name = 'menu.cardapio'
@@ -17,7 +18,11 @@ urlpatterns = [
     path('api/diaFuncionamento/', v.diaFuncionamento_list, name='diaFuncionamento'),
     path('api/cardapio/<int:pk>/', v.cardapio_detail),
     path('api/cardapio/', v.cardapio_list, name='cardapio'),
-
+    path('api/register/', v.register_view, name='register-view'),
+    path('api/login/', v.login_view, name='login-view'),
+    path('api/logout/', v.logout_view, name='logout-view'),
+    path('api/password-reset/', v.password_reset_view, name='password-reset-view'),
+    
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
