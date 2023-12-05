@@ -13,7 +13,7 @@ create table feedback (
 	id_usuario integer,
 	id_refeicao integer,
 	primary key (id_feedback),
-	FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+	FOREIGN KEY (id_usuario) REFERENCES cardapio_usuario(id),
 	FOREIGN KEY (id_refeicao) REFERENCES refeicoes(id_refeicoes)
 );
 
