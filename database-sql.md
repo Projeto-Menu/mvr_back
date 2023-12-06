@@ -49,3 +49,46 @@ create table dia_funcionamento (
 	FOREIGN KEY (id_almoco) REFERENCES cardapio(id_cardapio),
 	FOREIGN KEY (id_janta) REFERENCES cardapio(id_cardapio)
 );
+
+INSERT INTO cardapio_usuario (
+    id, password, last_login, is_superuser, username, first_name, last_name, is_staff, is_active, date_joined, email
+)
+VALUES 
+(
+    1, 'senha123', '2023-12-06T12:00:00Z', false, 'joedoe', 'Joe', 'Doe', false, true, '2023-12-06T12:00:00Z', 'joe.doe@example.com'
+),
+(
+    2, 'outrasenha456', '2023-12-06T12:30:00Z', false, 'janedoe', 'Jane', 'Doe', false, true, '2023-12-06T12:30:00Z', 'jane.doe@example.com'
+);
+
+INSERT INTO public.refeicoes (nome_prato, descricao) VALUES 
+('Prato Principal 1', 'Descrição do Prato Principal 1'),
+('Prato Principal 2', 'Descrição do Prato Principal 2'),
+('Vegetariano 1', 'Descrição do Vegetariano 1'),
+('Guarnição 1', 'Descrição da Guarnição 1'),
+('Complemento 1', 'Descrição do Complemento 1'),
+('Salada Crua 1', 'Descrição da Salada Crua 1'),
+('Salada Cozida 1', 'Descrição da Salada Cozida 1'),
+('Sobremesa 1', 'Descrição da Sobremesa 1'),
+('Bebida 1', 'Descrição da Bebida 1');
+
+INSERT INTO public.feedback (nota_refeicao, comentario, id_usuario, id_refeicao) VALUES 
+(4, 'Ótima refeição!', 1, 1),
+(3, 'Poderia melhorar.', 2, 2),
+(5, 'Excelente como sempre.', 1, 3);
+
+INSERT INTO public.cardapio (
+    id_prato_principal, id_vegetariano, id_guarnicao, id_complemento, 
+    id_salada_crua, id_salada_cozida, id_sobremesa, id_bebida
+) VALUES 
+(1, 3, 4, 5, 6, 7, 8, 9),
+(2, 3, 4, 5, 6, 7, 8, 9),
+(1, 3, 4, 5, 6, 7, 8, 9);
+
+INSERT INTO public.dia_funcionamento (id_almoco, id_janta, dia_semana, data_dia) VALUES 
+(1, 2, 'Segunda-feira', '2023-12-11'),
+(3, 1, 'Terça-feira', '2023-12-12'),
+(1, 2, 'Quarta-feira', '2023-12-13'),
+(2, 3, 'Quinta-feira', '2023-12-13'),
+(3, 2, 'Sexta-feira', '2023-12-13');
+
